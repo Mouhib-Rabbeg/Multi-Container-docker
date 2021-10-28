@@ -23,8 +23,8 @@ after_success:
   - docker tag mouhib/multi-worker mouhibrabbeg/multi-container/mouhib/multi-worker
   
  # take those images and push them to docker hub
-  - docker push mouhibrabbeg/multi-container/mouhib/multi-client
-  - docker push mouhibrabbeg/multi-container/mouhib/multi-nginx
-  - docker push mouhibrabbeg/multi-container/mouhib/multi-server
-  - docker push mouhibrabbeg/multi-container/mouhib/multi-worker
+  - docker push mouhibrabbeg/multi-container:mouhib/multi-client
+  - docker push mouhibrabbeg/multi-container:mouhib/multi-nginx
+  - docker push mouhibrabbeg/multi-container:mouhib/multi-server
+  - docker push mouhibrabbeg/multi-container:mouhib/multi-worker
   
