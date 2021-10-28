@@ -15,9 +15,15 @@ after_success:
   - docker build -t mouhib/multi-worker ./worker
  #Login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+ #tag image before pushing
+  - docker tag mouhib/multi-client mouhibrabbeg/mouhib/multi-client
+  - docker tag mouhib/multi-server mouhibrabbeg/mouhib/multi-server
+  - docker tag mouhib/multi-nginx mouhibrabbeg/mouhib/multi-nginx
+  - docker tag mouhib/multi-worker mouhibrabbeg/mouhib/multi-worker
  # take those images and push them to docker hub
-  - docker push mouhib/multi-client
-  - docker push mouhib/multi-nginx
-  - docker push mouhib/multi-server
-  - docker push mouhib/multi-worker
+  - docker push mouhibrabbeg/mouhib/multi-client
+  - docker push mouhibrabbeg/mouhib/multi-nginx
+  - docker push mouhibrabbeg/mouhib/multi-server
+  - docker push mouhibrabbeg/mouhib/multi-worker
   
